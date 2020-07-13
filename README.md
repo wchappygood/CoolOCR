@@ -1,0 +1,2 @@
+# CoolOCR
+CoolOCR
