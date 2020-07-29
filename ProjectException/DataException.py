@@ -4,24 +4,22 @@
    File Name:   DataException
    Description :
    Author:      qisen
-   date:        2020/7/15 / 下午3:44
+   date:        2020/7/15 / 下午5:20
 -------------------------------------------------
    Change Activity:
                    2020/7/15:
 -------------------------------------------------
 """
-from ProjectException.ProjectBaseException import ProjectBaseException
+from ProjectException.BasicProjectException import BasicProjectException
 
 
 # ================================== pydoc ==================================
-# define the different exception to process in coolOCR project
-
-# Data exception error
+# Data framework exception
 # ================================ end pydoc ================================
-class DataRequireError(ProjectBaseException):
+class DataTypeRequireError(BasicProjectException):
     """
     -------------------------------------------------------------------------------------------
-    This DataRequireError class is used to : define the different datatype or status error
+    This DataTypeRequireError class is used to : define the program process data with different data type or status
     -------------------------------------------------------------------------------------------
     """
     exceptionCode = 700
@@ -32,10 +30,10 @@ class DataRequireError(ProjectBaseException):
     def exceptionProcess(cls, showInformation):
         """
         -------------------------------------------------------------------------------------------
-        This function is used to : process the data require error.
+        This function is used to :process the data require error
         -------------------------------------------------------------------------------------------
         Params
-            :param showInformation: show error information
+            :param showInformation: the information of data require error
         Return
         -------------------------------------------------------------------------------------------
         """
@@ -46,14 +44,14 @@ class DataRequireError(ProjectBaseException):
         print("*" * 20)
 
 
-class DataInputSizeError(ProjectBaseException):
+class DataShapeSizeError(BasicProjectException):
     """
     -------------------------------------------------------------------------------------------
-    This DataInputSizeError class is used to :define the data input length error
+    This DataShapeSizeError class is used to : define the project process data with different data shape
     -------------------------------------------------------------------------------------------
     """
     exceptionCode = 701
-    exceptionMsg = ">>>ERR: The Program meet a data transform length error."
+    exceptionMsg = ">>>ERR: The Program meet a data transform shape error."
     errorCode = 2001
 
     @classmethod
